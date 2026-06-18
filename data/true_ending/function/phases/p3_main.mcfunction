@@ -2,7 +2,7 @@
 scoreboard players add @s trueEnding_attacktimer 1
 
 # Move dragon away from arena over first 60 ticks
-execute if score @s trueEnding_attacktimer matches 1..60 run tp @s 0 160 200
+execute if score @s trueEnding_attacktimer matches 1..60 run tp @s 0 250 0
 
 # Spawn portal particles at center
 execute in the_end positioned 0 65 0 run particle portal ~ ~ ~ 3 3 3 0.05 20 force @a[distance=..256]
