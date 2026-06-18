@@ -1,0 +1,10 @@
+{
+  "pack": {
+    "description": "True Ending Modified with added phases, moves, and mechanics",
+    "max_format": 94,
+    "min_format": [
+      94,
+      1
+    ]
+  }
+}
