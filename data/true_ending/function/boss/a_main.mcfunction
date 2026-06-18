@@ -53,7 +53,8 @@ execute if score @s[tag=!trueEnding_halfhealth] trueEnding_health_percent matche
 # Trigger big-phase 2 transition when at 50% (only from phase 1)
 execute if entity @s[tag=trueEnding_halfhealth] if score @s trueEnding_bigphase matches 1 run function true_ending:phases/p2_transition
 
-execute if score @s[tag=!trueEnding_quarterhealth] trueEnding_health_percent matches ..333 run scoreboard players set @s trueEnding_bosstime 2001
+# only trigger laser phase from a_main if still in bigphase 1
+execute if score @s trueEnding_bigphase matches 1 if score @s[tag=!trueEnding_quarterhealth] trueEnding_health_percent matches ..333 run scoreboard players set @s trueEnding_bosstime 2001
 execute if score @s[tag=!trueEnding_quarterhealth] trueEnding_health_percent matches ..333 run tag @s add trueEnding_quarterhealth
 
 execute unless score @s[predicate=!true_ending:holding/totem] trueEnding_bosstime matches 3000.. run scoreboard players set @s trueEnding_bosstime 3000
