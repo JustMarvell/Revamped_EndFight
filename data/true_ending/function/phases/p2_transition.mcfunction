@@ -1,6 +1,8 @@
 # Phase 2 Transition - triggered when dragon HP reaches 50% for the first time
 # Called from a_main_override when trueEnding_halfhealth tag is added AND bigphase == 1
 
+tag @s add trueEnding_p2entered
+
 # Mark that we are now entering Phase 2
 scoreboard players set @s trueEnding_bigphase 2
 

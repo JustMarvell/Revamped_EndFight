@@ -10,5 +10,6 @@ execute if score @s trueEnding_p2_transitioning matches 0 if score @s trueEnding
 execute if score @s trueEnding_p2_transitioning matches 0 if score @s trueEnding_attacktimer matches 240 run scoreboard players set @s trueEnding_attacktimer 0
 
 # Check for Phase 3 transition: when dragon reaches 33% of 500 HP = ~165 HP
-execute if score @s trueEnding_p2_transitioning matches 0 if score @s[tag=!trueEnding_p3ready] trueEnding_health_percent matches ..350 run tag @s add trueEnding_p3ready
+# only check p3 threshold after attacktimer has run for a bit (gives health reset time to apply)
+execute if score @s trueEnding_p2_transitioning matches 0 if score @s trueEnding_attacktimer matches 20.. if score @s[tag=!trueEnding_p3ready] trueEnding_health_percent matches ..350 run tag @s add trueEnding_p3ready
 execute if score @s trueEnding_p2_transitioning matches 0 if entity @s[tag=trueEnding_p3ready] run function true_ending:phases/p3_transition
